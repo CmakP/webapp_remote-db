@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>COMP3613_A00977249Assignment01</display-name>
+  <description>Application for displaying remote table contents</description>
+  
+  <context-param>
+      <param-name>tableName</param-name>
+      <param-value>A00977249_Products</param-value>
+  </context-param>
+  
+  <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <jsp-file>/home.jsp</jsp-file>
+      <init-param> 
+       <param-name>greeting</param-name>
+       <param-value>Welcome to my webpage!</param-value>
+      </init-param>
+      <init-param>
+       <param-name>instruction</param-name>
+       <param-value>Click on submit button to see a list of product information.</param-value>
+      </init-param>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Assignment01</servlet-name>
+    <servlet-class>a00977249.assignment.Assignment01Servlet</servlet-class>
+      <init-param> 
+       <param-name>propPath</param-name>
+       <param-value>WEB-INF/files/dbprops.properties</param-value>
+      </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home.jsp</url-pattern>
+    </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Assignment01</servlet-name>
+    <url-pattern>/assignment01</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
