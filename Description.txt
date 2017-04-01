@@ -1,0 +1,4 @@
+A web application that allows users to access a remote database and follows the MVC 
+architecture.
+Users will have full access to the database table (All CRUD operations are available)
+User input will be validated on both the browser and the server side.
